@@ -10,7 +10,7 @@ import { Component, OnInit } from '@angular/core';
   ]
 })
 export class ListComponent implements OnInit {
-
+  pokemonSelected: any = null;
   nameFilter:string = '';
   constructor(private pokeapiService: PokeapiService) {
    }
@@ -22,6 +22,10 @@ export class ListComponent implements OnInit {
     return  this.pokeapiService.pokeList.filter(pokemon =>{
       return pokemon.name.toLowerCase().indexOf(this.nameFilter.toLocaleLowerCase()) !== -1;
     });
+  }
+
+  handleClick(pokemon: any){
+    this.pokemonSelected = pokemon;
   }
 
 }
