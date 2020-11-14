@@ -2,8 +2,9 @@
 
 
 <ul class="poke-list">
-  <li class="poke-list-item" *ngFor>
-    <img src="//serebi.net/pokedex-xy/icon">
-    <span></span>
+  <li class="poke-list-item" *ngFor="let pokemon of pokemonList">
+    <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/{{pokemon.number | number:'3.0-0'}}.png"
+    width="50">
+    <span>{{pokemon.number | number:'3.0-0'}} -{{pokemon.name}}</span>
   </li>
 </ul>
