@@ -1,7 +1,7 @@
 <input [(ngModel)]='nameFilter' type="text" id="poke-filter" placeholder="Search" maxlength="20">
 
 <img *ngIf="pokemonSelected != null" class="detail-img" src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/{{pokemonSelected?.number | number:'3.0-0'}}.png"
-    width="200">
+    width="250">
 <ul class="poke-list">
   <li class="poke-list-item" *ngFor="let pokemon of pokemonList" (click)="handleClick(pokemon)">
     <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/{{pokemon?.number | number:'3.0-0'}}.png"

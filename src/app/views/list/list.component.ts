@@ -16,11 +16,15 @@ export class ListComponent implements OnInit {
    }
 
   ngOnInit(): void {
+    this.pokeapiService.listAll();
   }
 
   get pokemonList(){
     return  this.pokeapiService.pokeList.filter(pokemon =>{
-      return pokemon.name.toLowerCase().indexOf(this.nameFilter.toLocaleLowerCase()) !== -1;
+      if(pokemon === null){
+        return;
+      }
+      return pokemon?.name.toLowerCase().indexOf(this.nameFilter.toLocaleLowerCase()) !== -1;
     });
   }
 
